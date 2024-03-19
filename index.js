@@ -21,11 +21,7 @@ app.get('dosi', (req, res) => {
 
     res.end();
 });
-// Xử lý tất cả các yêu cầu còn lại
-app.get('*', (req, res) => {
-    console.log(JSON.stringify(req.headers))
-    res.send('Hello World!');
-});
+
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);

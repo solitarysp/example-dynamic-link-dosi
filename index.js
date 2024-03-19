@@ -7,7 +7,7 @@ const port = 3000;
 // Phục vụ các tệp tĩnh từ thư mục 'public'
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('dosi', (req, res) => {
+app.get('/dosi', (req, res) => {
     const userAgent = req.headers['user-agent'];
     console.log(JSON.stringify(req.headers))
 
@@ -21,7 +21,11 @@ app.get('dosi', (req, res) => {
 
     res.end();
 });
-
+// Xử lý tất cả các yêu cầu còn lại
+app.get('*', (req, res) => {
+    console.log(JSON.stringify(req.headers))
+    res.send('Hello World!');
+});
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);

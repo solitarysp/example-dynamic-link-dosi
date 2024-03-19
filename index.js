@@ -15,6 +15,7 @@ app.get('*', (req, res) => {
 
 app.get('dosi', (req, res) => {
     const userAgent = req.headers['user-agent'];
+    console.log(JSON.stringify(req.headers))
 
     if (userAgent.includes('Android')) {
         res.redirect(301, 'https://play.google.com/store/apps/details?id=world.dosi');

@@ -1,0 +1,8 @@
+*.iml
+**/target/**
+.idea
+logs
+/cache
+/node_modules
+/jsontruyen_meta_data
+/jsontruyen

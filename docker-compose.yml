@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  example-dynamic-link-dosi-service:
+    build: .
+    image: example-dynamic-link-dosiy-image
+    container_name: example-dynamic-link-dosi-container
+    restart: always
+    volumes:
+      - ./index.js/:/data/projects/app/index.js
+      - ./package.json/:/data/projects/app/package.json
+    networks:
+      - root-network
+networks:
+  root-network:
+    external: true

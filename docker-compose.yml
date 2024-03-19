@@ -9,6 +9,7 @@ services:
     volumes:
       - ./index.js/:/data/projects/app/index.js
       - ./package.json/:/data/projects/app/package.json
+      - ./public/:/data/projects/app/public
     networks:
       - root-network
 networks:

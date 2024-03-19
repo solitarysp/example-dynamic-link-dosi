@@ -21,7 +21,7 @@ app.get('dosi', (req, res) => {
     } else if (userAgent.includes('iPhone') || userAgent.includes('iPad')) {
         res.redirect(301, 'itms-apps://apps.apple.com/us/app/dosi-digital-marketplace/id6473919354');
     } else {
-        res.send('Hello World!');
+        res.send('Hello World!1');
     }
 
     res.end();

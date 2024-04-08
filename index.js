@@ -17,13 +17,13 @@ app.get('/router', (req, res) => {
     const openStorge = queryObject['openStorge'];
     if (openStorge === 'true' || openStorge == '1') {
         if (userAgent.includes('Android')) {
-            console.log("UserAgent type Android")
+            console.log("UserAgent type Android");
             res.redirect(301, 'https://play.google.com/store/apps/details?id=world.dosi');
         } else if (userAgent.includes('iPhone') || userAgent.includes('iPad')) {
-            console.log("UserAgent type iPhone")
+            console.log("UserAgent type iPhone");
             res.redirect(301, 'itms-apps://apps.apple.com/us/app/dosi-digital-marketplace/id6473919354');
         } else {
-            console.log("Not fount userAgent type")
+            console.log("Not fount userAgent type");
             res.redirect(301, 'https://dosi.world/');
         }
     } else {

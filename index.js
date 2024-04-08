@@ -26,14 +26,16 @@ app.get('/router', (req, res) => {
             console.log("Not fount userAgent type");
             res.redirect(301, 'https://dosi.world/');
         }
-    } else {
-        const urlParam = queryObject['url'];
-        if (urlParam) {
-            res.redirect(301, urlParam);
-        }
+        res.end();
+        return;
+    }
+    const urlParam = queryObject['url'];
+    if (urlParam) {
+        res.redirect(301, urlParam);
+        res.end();
     }
 
-    res.end();
+
 });
 // Xử lý tất cả các yêu cầu còn lại
 app.get('*', (req, res) => {

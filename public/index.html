@@ -146,11 +146,18 @@
                 console.log("Not fount userAgent type");
                 location.href = 'https://dosi.world/';
             }
+            timeoutGotoHome();
             return;
         }
         if (urlParam) {
             location.href = urlParam;
         }
+    }
+
+    function timeoutGotoHome() {
+        setTimeout(() => {
+            location.href = 'https://dosi.world/';
+        }, 500);
     }
 
     runLogic();

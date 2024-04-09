@@ -136,17 +136,17 @@
         const urlOpenStorge = params.get('openStorge');
 
         if (urlOpenStorge === 'true' || urlOpenStorge == '1') {
-            if (navigator.userAgent.includes('Android')) {
-                console.log("UserAgent type Android");
-                location.href = 'https://play.google.com/store/apps/details?id=world.dosi';
-            } else if (navigator.userAgent.includes('iPhone') || navigator.userAgent.includes('iPad')) {
-                console.log("UserAgent type iPhone");
-                location.href = 'itms-apps://apps.apple.com/us/app/dosi-digital-marketplace/id6473919354';
-            } else {
-                console.log("Not fount userAgent type");
-                location.href = 'https://dosi.world/';
+            try {
+                if (navigator.userAgent.includes('Android')) {
+                    console.log("UserAgent type Android");
+                    location.href = 'https://play.google.com/store/apps/details?id=world.dosi';
+                } else if (navigator.userAgent.includes('iPhone') || navigator.userAgent.includes('iPad')) {
+                    console.log("UserAgent type iPhone");
+                    location.href = 'itms-apps://apps.apple.com/us/app/dosi-digital-marketplace/id6473919354';
+                }
+            } finally {
+                timeoutGotoHome();
             }
-            timeoutGotoHome();
             return;
         }
         if (urlParam) {
